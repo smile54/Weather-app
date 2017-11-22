@@ -7,7 +7,6 @@ function getMatchingLanguages(value) {
   if (value.length < 3) return [];
   const escapedValue = escapeRegexCharacters(value.trim());
   var link = `${MAIN_LINK}find?q=${value}&mode=json&units=${UNITS}&appid=${KEY}`;
-  console.log(link);
   if (escapedValue === '') {
     return [];
   }
@@ -20,15 +19,9 @@ function getMatchingLanguages(value) {
                 throw new Error('Server Error!');
               }
           });
-
-
-  if (escapedValue === '') {
-    return [];
-  }
-  
   const regex = new RegExp('^' + escapedValue, 'i');
-
-  return languages.filter(language => regex.test(language.name));
+  console.log(this.state.weather);
+  return this.state.weather;
 }
 
 /* ----------- */
@@ -45,12 +38,19 @@ function escapeRegexCharacters(str) {
 /* --------------- */
 
 function getSuggestionValue(suggestion) {
+  console.log(suggestion);
   return suggestion.name;
 }
 
 function renderSuggestion(suggestion) {
+  console.log('renderSuggestion');
+  var flagLink = `${FLAG_LINK}${suggestion.sys.country.toLowerCase()}.svg`;
   return (
-    <span>{suggestion.name}</span>
+    <div>
+      {suggestion.name}, 
+      {suggestion.sys.country}
+      <img src={flagLink} alt='Country Flag' style={{height: '26px'}} />
+    </div>
   );
 }
 
@@ -61,7 +61,8 @@ export default class SearchBar extends React.Component {
     this.state = {
       value: '',
       suggestions: [],
-      isLoading: false
+      isLoading: false,
+      weather: []
     };
     
     this.lastRequestId = null;
@@ -81,7 +82,7 @@ export default class SearchBar extends React.Component {
       suggestions: getMatchingLanguages(value)
     })
 
-
+    // console.log(this.state.suggestions);
 
     // Fake request
     // this.lastRequestId = setTimeout(() => {
@@ -133,66 +134,3 @@ export default class SearchBar extends React.Component {
     );
   }
 }
-
-/* ---------- */
-/*    Data    */
-/* ---------- */
-
-const languages = [
-  {
-    name: 'C',
-    year: 1972
-  },
-  {
-    name: 'C#',
-    year: 2000
-  },
-  {
-    name: 'C++',
-    year: 1983
-  },
-  {
-    name: 'Clojure',
-    year: 2007
-  },
-  {
-    name: 'Elm',
-    year: 2012
-  },
-  {
-    name: 'Go',
-    year: 2009
-  },
-  {
-    name: 'Haskell',
-    year: 1990
-  },
-  {
-    name: 'Java',
-    year: 1995
-  },
-  {
-    name: 'Javascript',
-    year: 1995
-  },
-  {
-    name: 'Perl',
-    year: 1987
-  },
-  {
-    name: 'PHP',
-    year: 1995
-  },
-  {
-    name: 'Python',
-    year: 1991
-  },
-  {
-    name: 'Ruby',
-    year: 1995
-  },
-  {
-    name: 'Scala',
-    year: 2003
-  }
-];
