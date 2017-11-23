@@ -4,7 +4,7 @@
   "description": "Weather React/Redux application uses openweathermap api",
   "main": "index.js",
   "scripts": {
-    "dev_mode": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "server": "static build",
     "build": "webpack -p"
   },
@@ -12,12 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/smile54/Weather_App.git"
   },
-  "keywords": [
-    "REACT",
-    "REDUX",
-    "WEATHER",
-    "OPENWEATHERMAP"
-  ],
+  "keywords": ["REACT", "REDUX", "WEATHER", "OPENWEATHERMAP"],
   "author": "smile54",
   "license": "ISC",
   "bugs": {
