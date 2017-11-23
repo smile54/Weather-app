@@ -54,8 +54,6 @@ export default class CurrentCity extends React.Component {
   				})
 	}
 	render(){
-		
-		var time = 1510693558;
 		var weather = this.state.weather;
 		var arrowRotate = {
 			transform: `rotate(${weather.wind.deg}deg)`
