@@ -4,7 +4,7 @@ import Loader from 'react-loader-spinner';
 import { detect } from 'detect-browser';
 
 import {
-  KEY,
+  OPEN_WEATHER_MAP_KEY,
   MAIN_LINK,
   UNITS,
   IP_LOC,
@@ -20,18 +20,17 @@ const {
 } = utils;
 
 const CurrentCity = () => {
-  const [weather, setWeather] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [weatherData, setWeather] = useState({ weather: null, isLoading: true });
+  const { isLoading, weather } = weatherData;
 
   const fetchWeather = (latitude, longitude) => {
-    const link = `${MAIN_LINK}weather?lat=${latitude}&lon=${longitude}&units=${UNITS}&appid=${KEY}`;
+    const link = `${MAIN_LINK}weather?lat=${latitude}&lon=${longitude}&units=${UNITS}&appid=${OPEN_WEATHER_MAP_KEY}`;
     fetch(link)
       .then((response) => {
         const responseData = response.json();
         if (response.status === 200) {
           return responseData.then((weatherResponse) => {
-            setWeather(weatherResponse);
-            setIsLoading(false);
+            setWeather({ weather: weatherResponse, isLoading: false });
           });
         }
         throw new Error('Something went wrong!');

@@ -49,17 +49,16 @@ const CurrentCityCard = ({
         </div>
         <div className="wind-status">
           <img src={windArrow} alt="Wind path arrow" style={arrowRotate} />
-          <span className="wind-speed">
-            {`Wind speed: ${windSpeed} m/sec`}
-          </span>
-          <div className="additional">
-            <span className="additional-text">
-              {`Humidity: ${humidity}%`}
-            </span>
-            <span className="additional-text">
-              {`Pressure: ${pressure} mm Hg`}
-            </span>
-          </div>
+          <p className="wind-speed">
+            {`Wind speed:
+            ${windSpeed} m/sec`}
+          </p>
+          <p className="additional-text">
+            {`Humidity: ${humidity}%`}
+          </p>
+          <p className="additional-text">
+            {`Pressure: ${pressure} mm Hg`}
+          </p>
         </div>
         <div className="sun-time">
           <div className="sun-time-container">

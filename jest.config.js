@@ -9,15 +9,4 @@ module.exports = {
       '<rootDir>/__mocks__/mocks.js',
     '\\.(css|less|scss)$': '<rootDir>/__mocks__/mocks.js',
   },
-  // moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  // testMatch: ['**/*.(test|spec).(ts|tsx)'],
-  // globals: {
-  //   'ts-jest': {
-  //     useBabelrc: true,
-  //     tsConfigFile: 'jest.tsconfig.json',
-  //   },
-  // },
-  // transform: {
-  //   '^.+\\.tsx?$': 'ts-jest',
-  // },
 };
