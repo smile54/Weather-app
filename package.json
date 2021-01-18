@@ -1,15 +1,19 @@
 {
   "name": "weather-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export -o build",
     "start": "next start",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "detect-browser": "^5.2.0",
     "flexbox-grid-sass": "^4.1.0",
     "moment": "^2.29.1",
     "next": "10.0.5",
@@ -20,6 +24,7 @@
     "react-loader-spinner": "^3.1.14"
   },
   "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
     "enzyme": "^3.11.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",

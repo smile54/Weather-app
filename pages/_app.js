@@ -11,11 +11,12 @@ function WeatherApp({ Component, pageProps }) {
 }
 
 WeatherApp.propTypes = {
-  Component: PropTypes.element.isRequired,
-  pageProps: PropTypes.shape,
+  Component: PropTypes.func,
+  pageProps: PropTypes.oneOfType([PropTypes.object]),
 };
 
 WeatherApp.defaultProps = {
+  Component: () => null,
   pageProps: {},
 };
 

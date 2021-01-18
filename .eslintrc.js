@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true,
   },
   extends: ['airbnb', 'airbnb/hooks', 'plugin:sonarjs/recommended'],
   globals: {
@@ -19,5 +20,7 @@ module.exports = {
     semi: ['error', 'always'],
     indent: ['error', 2],
     'no-multi-spaces': ['error'],
+    'react/react-in-jsx-scope': 0,
+    'import/no-extraneous-dependencies': 0,
   },
 };
