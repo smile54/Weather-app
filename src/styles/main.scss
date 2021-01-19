@@ -1,202 +1,209 @@
-html{
-	width: 100%;
-	height: 100%;
+html {
+  width: 100%;
+  height: 100%;
 }
-body{
-	width: 100%;
-	height: 100%;
-	background: #1d4350; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #1d4350, #a43931); /* Chrome 10-25, Safari 5.1-6 */
- 	background: linear-gradient(to right, #1d4350, #a43931); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- 	margin: 0;
- 	font-family: PT Serif, sans-serif;
+body {
+  width: 100%;
+  height: 100%;
+  background: #1d4350; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1d4350,
+    #a43931
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1d4350,
+    #a43931
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0;
+  font-family: PT Serif, sans-serif;
 }
-#loading{
-	font-size: 36px;
+p {
+  margin: 0;
+}
+.loader {
+  font-size: 36px;
+  font-family: monospace;
+  color: rgba(197, 197, 197, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.authorInfo {
+  position: fixed;
+  bottom: 0;
+  background-color: RGBA(58, 68, 87, 0.3);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  & img {
+    height: fit-content;
+    margin-left: 15px;
+  }
+  & span {
+    align-self: flex-end;
     font-family: monospace;
-    color: rgba(197, 197, 197, 0.5);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.authorInfo{
-	position: fixed;
-	bottom: 0;
-	background-color: RGBA(58,68,87,0.3);
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	& img{
-	height: fit-content;
-	margin-left: 15px;
-	}
-	& span{
-		align-self: flex-end;
-		font-family: monospace;
-		color: rgba(197, 197, 197, 0.2);
-		font-size: 24px;
-	}
+    color: rgba(197, 197, 197, 0.2);
+    font-size: 24px;
+  }
 }
 //AUTOSUGGESTER STYELS
-.react-autosuggest{
-	&__container{
-  		position: relative;
-  		padding-top: 5px;
-	}
-	&__input{
-  		width: calc(100% - 15px);
-  		height: 30px;
-  		padding: 5px 0px 5px 15px;
-  		// margin: 0px calc((100% - 60%)/2 - 16px);
-  		font-family: Helvetica, sans-serif;
-  		font-weight: 300;
-  		font-size: 16px;
-  		border: 1px solid #aaa;
-  		border-radius: 4px;
-  		&--focused{
-  			outline: none;
-  		}
-  		&--open{
-  			border-bottom-left-radius: 0;
-  			border-bottom-right-radius: 0;
-  		}
-	}
-	&__suggestions-container{
-  		display: none;
-  		&--open{
-  			display: block;
-  			position: absolute;
-  			top: 48px;
-  			width: 100%;
-  			// margin: 0px calc((100% - 60%)/2);
-  			border: 1px solid #aaa;
-  			background-color: #fff;
-  			font-family: Helvetica, sans-serif;
-  			font-weight: 300;
-  			font-size: 16px;
-  			border-bottom-left-radius: 4px;
-  			border-bottom-right-radius: 4px;
-  			z-index: 2;
-  		}
-	}
-	&__suggestions-list{
-  		margin: 0;
-  		padding: 0;
-  		list-style-type: none;
-	}
-	&__suggestion{
-  		cursor: pointer;
-  		padding: 10px 20px;
-  		&--highlighted{
-  			background-color: #ddd;
-  		}
-	}
+.react-autosuggest {
+  &__container {
+    position: relative;
+    padding-top: 5px;
+  }
+  &__input {
+    width: calc(100% - 15px);
+    height: 30px;
+    padding: 5px 0px 5px 15px;
+    // margin: 0px calc((100% - 60%)/2 - 16px);
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    &--focused {
+      outline: none;
+    }
+    &--open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &__suggestions-container {
+    display: none;
+    &--open {
+      display: block;
+      position: absolute;
+      top: 48px;
+      width: 100%;
+      // margin: 0px calc((100% - 60%)/2);
+      border: 1px solid #aaa;
+      background-color: #fff;
+      font-family: Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      z-index: 2;
+    }
+  }
+  &__suggestions-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  &__suggestion {
+    cursor: pointer;
+    padding: 10px 20px;
+    &--highlighted {
+      background-color: #ddd;
+    }
+  }
 }
-// @media (min-width: 767px){
-// 	.col--xs-12{
-// 		width: 100%;
-// 		background-color: #000;
-// 	}
-// }
 //CITY-LIST ITEM STYLES
-.city-list{
-	margin-top: 30px;
-	&-item{
-	// border: 1px dashed white;
-	color: #FFF;
-	font-size: 24px;
-		&-wrapper{
-			border: 3px solid white;
-			margin: 5px;
-			box-shadow: 10px 15px rgba(0, 0, 0, .12);
-			display: flex;
-			flex-direction: row;
-			& .weather-icon{
-				width: 130px;
-			}
-			& .weather-info{
-				text-align: center;
-				width: calc(100% - 130px);
-				& button{
-					border: none;
-    				border-radius: 18px;
-    				font-size: 18px;
-    				padding: 8px;
-    				margin: 10px 15px;
-    				color: white;
-    				border: 3px solid rgba(0, 0, 0, 0);
-    				outline: 0;
-    				background: linear-gradient(#F3AE0F, #E38916) #E38916;
-    				&:focus{
-    					// color: rgba(47, 47, 146, 0.75);
-    					border: 3px solid lightblue;
-    					background-color: rgba(255, 255, 255, 0.15);
-    				}
-    				&:hover{
-    					color: lightblue;
-    					border: 3px solid lightblue;
-    					background: linear-gradient(#f5ae00, #f59500) #f5ae00;
-    				}
-    				&:active{
-    					color: black;
-    					border: 3px solid black;
-    					background: linear-gradient(#f59500, #f5ae00) #f59500;
-    				}
-				}
-				& .location-info, .weather-status{
-					margin: 10px;
-				}
-				& .location-info{
-					overflow: hidden;
-					& img{
-						width: 24px;
-						margin-left: 5px;
-					}
-				}
-			}
-		}	
-		.current-city{
-				font-size: 18px;
-				padding: 5px calc((40% - 130px)/2);
-			& .weather-icon{
-				margin-left: 5%;
-			}
-			& .weather-info{
-				width: 25%;
-				font-size: 20px;
-			}
-			& .wind-status{
-				padding: 5px;
-				width: 20%;
-				& img{
-					width: 60px;
-				}
-				& .wind-speed{
-					// font-size: 18px;
-				}
-			}
-			& .sun-time{
-				width: 20%;
-				&-container{ 
-					display: flex;
-					& img{
-						width: 90px;
-						height: 90px;
-					}
-					& span{
-						align-self: center;
-					}
-				}
-			}
-			& .additional{
-				width: 100%;
-				padding-top: 20px;
-				& span{
-					display: inline-block;
-				}
-			}
-		}
-	}
+.city-list {
+  margin-top: 30px;
+  &-item {
+    color: #fff;
+    font-size: 24px;
+    &-wrapper {
+      border: 3px solid white;
+      margin: 5px;
+      box-shadow: 10px 15px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: row;
+      & .weather-icon {
+        width: 130px;
+      }
+      & .weather-info {
+        text-align: center;
+        width: calc(100% - 130px);
+        & button {
+          border: none;
+          border-radius: 18px;
+          font-size: 18px;
+          padding: 8px;
+          margin: 10px 15px;
+          color: white;
+          border: 3px solid rgba(0, 0, 0, 0);
+          outline: 0;
+          background: linear-gradient(#f3ae0f, #e38916) #e38916;
+          &:focus {
+            // color: rgba(47, 47, 146, 0.75);
+            border: 3px solid lightblue;
+            background-color: rgba(255, 255, 255, 0.15);
+          }
+          &:hover {
+            color: lightblue;
+            border: 3px solid lightblue;
+            background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+          }
+          &:active {
+            color: black;
+            border: 3px solid black;
+            background: linear-gradient(#f59500, #f5ae00) #f59500;
+          }
+        }
+        & .location-info,
+        .weather-status {
+          margin: 10px;
+        }
+        & .location-info {
+          overflow: hidden;
+          & img {
+            width: 24px;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    .current-city {
+      font-size: 18px;
+      padding: 5px calc((40% - 130px) / 2);
+      & .weather-icon {
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+      }
+      & .weather-info {
+        width: 25%;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      & .wind-status {
+        padding: 5px;
+        width: 25%;
+        & img {
+          width: 60px;
+        }
+      }
+      & .sun-time {
+        width: 20%;
+        &-container {
+          display: flex;
+          & img {
+            width: 70px;
+            height: 70px;
+          }
+          & span {
+            align-self: center;
+          }
+        }
+      }
+      & .additional {
+        width: 100%;
+        padding-top: 20px;
+        & span {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }
